@@ -31,6 +31,8 @@ STM32F103 devices use the Cortex-M3 core, with a maximum CPU speed of 72 MHz. Th
 
 - [STM32F103V](https://github.com/sochub/STM32F103R) 
 
+- [STM32F103Z](https://github.com/sochub/STM32F103Z) 
+
 ##  [SoC开发平台](http://www.qitas.cn)  
 
 
