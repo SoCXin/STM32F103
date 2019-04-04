@@ -1,8 +1,0 @@
-*.lst
-*.bin
-*.uvoptx
-*.uvguix.*
-RTE
-obj
-list
-DebugConfig

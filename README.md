@@ -2,25 +2,31 @@
 
 [![sites](SoC/SoC.png)](http://www.qitas.cn) 
 
-#### 属于：[cortex M3](https://github.com/sochub/CM3)
-#### 父目录：[STM32F1](https://github.com/sochub/STM32F1)
+####  qitas@qitas.cn
 
-## [描述](https://github.com/sochub/STM32F103/wiki) 
+#### 父级：[STM32F1](https://github.com/sochub/STM32F103) 
+#### 归属：[Cortex M3](https://github.com/sochub/CM3) 
 
-超高出镜率的STM32单片机
+## [简介](https://github.com/sochub/STM32F103/wiki)
 
-## [组成](SoC/) 
+STM32F103 devices use the Cortex-M3 core, with a maximum CPU speed of 72 MHz. The portfolio covers from 16 Kbytes to 1 Mbyte of Flash with motor control peripherals, USB full-speed interface and CAN. 
 
-#### [文档资料](docs/)
+[![sites](SoC/STM32F103.png)](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) 
 
-参考设计和数据手册
+## [组成](https://github.com/sochub/STM32F103)
 
-#### [项目文件](project/)
+#### [文档](docs/)
 
-包括各种开发资源和工程
+#### [资源](src/)
 
----
+#### [工程](project/)
 
-###  [SoC开发平台](http://www.qitas.cn)   
+### [收录型号](https://github.com/sochub/STM32F103)
 
-###  qitas@qitas.cn
+- [STM32F103R](https://github.com/sochub/STM32F103R) 
+
+- [STM32F103V](https://github.com/sochub/STM32F103R) 
+
+##  [SoC开发平台](http://www.qitas.cn)  
+
+
