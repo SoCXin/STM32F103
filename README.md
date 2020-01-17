@@ -1,16 +1,16 @@
 ﻿# [STM32F103](https://github.com/sochub/STM32F103)
 
-[![sites](SoC/SoC.png)](http://www.qitas.cn) 
+[![sites](http://182.61.61.133/link/resources/docs.png)](https://stop.stops.top) 
 
-#### 父级：[STM32F1](https://github.com/sochub/STM32F1) 
-
-#### 归属：[Cortex M3](https://github.com/sochub/CM3) 
+#### [Vendor](https://github.com/sochub/Vendor)：[ST](https://github.com/sochub/ST)
+#### [Cortex](https://github.com/sochub/Cortex)：[Cortex M3](https://github.com/sochub/CM3) 
+#### [Level](https://github.com/sochub/Level)：72MHz 
 
 ## [简介](https://github.com/sochub/STM32F103/wiki)
 
 STM32F103采用Cortex-M3内核，CPU最高速度达72 MHz。该产品系列具有16KB ~ 1MB Flash、多种控制外设、USB全速接口和CAN。 
 
-[![sites](SoC/STM32F103.png)](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) 
+[![sites](docs/STM32F103.png)](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) 
 
 
 * [STM32F103C8](https://github.com/sochub/STM32F103C) 
@@ -22,7 +22,8 @@ STM32F103采用Cortex-M3内核，CPU最高速度达72 MHz。该产品系列具�
 
 * [参考文档](docs/)
 * [参考资源](src/)
-    * [make工程](src/make)
+
+
 * [编译工具](https://github.com/sochub/arm-none-eabi)
 
 ### [选型方案](https://github.com/sochub/STM32F103)
