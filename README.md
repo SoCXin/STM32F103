@@ -1,9 +1,9 @@
 ﻿# [STM32F103](https://github.com/sochub/STM32F103)
 
-[![sites](http://182.61.61.133/link/resources/docs.png)](https://stop.stops.top) 
+[![sites](http://182.61.61.133/link/resources/SoC.png)](https://stop.stops.top) 
 
 #### [Vendor](https://github.com/sochub/Vendor)：[ST](https://github.com/sochub/ST)
-#### [Cortex](https://github.com/sochub/Cortex)：[Cortex M3](https://github.com/sochub/CM3) 
+#### [Cortex](https://github.com/sochub/Cortex)：[M3](https://github.com/sochub/CM3) 
 #### [Level](https://github.com/sochub/Level)：72MHz 
 
 ## [简介](https://github.com/sochub/STM32F103/wiki)
@@ -23,10 +23,9 @@ STM32F103采用Cortex-M3内核，CPU最高速度达72 MHz。该产品系列具�
 * [参考文档](docs/)
 * [参考资源](src/)
 
-
 * [编译工具](https://github.com/sochub/arm-none-eabi)
 
-### [选型方案](https://github.com/sochub/STM32F103)
+### [选型方案](https://github.com/sochub)
 
 STM32F103是市面上使用最为普及的一款单片机，各种爱好者都以此进入32位单片机领域，所以拥有大量的参考设计方案，你可以通过这款芯片找到自己近似的解决方案资源。
 
