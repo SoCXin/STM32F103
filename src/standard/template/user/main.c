@@ -1,34 +1,62 @@
-/**
-*
-*  @Fuction: main.c
-*  @Author: 
-*  @Descripe :
-*
-**/
+/******************************************************************************
+****版本：1.0.0
+****平台：
+****日期：2020-07-29
+****作者：Qitas
+****版权：
+*******************************************************************************/
 
 #include "stm32f10x.h"
 #include "uart.h"
 #include "delay.h"
 #include "usb_manager.h"
 
+#define   STM32_BASE            (0x08000000) 	//STM32 FLASH的起始地址
+#define   IAP_FLASH_SIZE        (0x3000)      //Bootloader区域大小
+#define   ApplicationAddress    (STM32_BASE + IAP_FLASH_SIZE) //应用程序地址
 
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：无
+**输出参数 ：无
+*******************************************************************************/
+void IAP_Init(void)
+{
+	RCC->APB1ENR |= (RCC_APB1ENR_PWREN | RCC_APB1ENR_BKPEN );
+	SCB->VTOR = STM32_BASE | IAP_FLASH_SIZE;
+}
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：无
+**输出参数 ：无
+*******************************************************************************/
 void InitDriver()
 {
+	IAP_Init();
 	delay_init();
-	 uart_init(115200);
+	uart_init(115200);
 	printf("serial init success \n");
     usb_use_init();
 	printf("system init success \n");
 
 }
-
-void main()
+/*******************************************************************************
+**函数信息 ：
+**功能描述 ：
+**输入参数 ：无
+**输出参数 ：无
+*******************************************************************************/
+int main()
 {
-  InitDriver();
-  while(1)
+	InitDriver();
+	while(1)
 	{
-		delay_ms(1000);	
-		printf("start usb send \n");
-		usb_print("test QITAS \n");
+		delay_ms(1000);
+		printf("start QITAS send \n");
+		usb_print("QITAS test \n");
 	}
 }
+
+/*-------------------------(C) COPYRIGHT 2020 QITAS --------------------------*/
