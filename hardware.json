@@ -1,0 +1,11 @@
+{
+    "type":"MCU",
+    "name":"STM32F103",
+    "package":["TSSOP20","QFN20"],
+    "QFN20": {
+        "name":"STM32F103",
+        "peripheral": ["ADC","TIM","UART1","UART2","I2C","SPI","PWM"],
+        "GPIO":18
+    },
+    "version":"1.0.0"
+}
