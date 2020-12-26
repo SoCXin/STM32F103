@@ -1,29 +1,33 @@
 {
     "type":"MCU",
     "name":"STM32F103",
-    "series":["STM32F103","STM32F105"],
+    "series":["STM32F103"],
     "peripheral": ["ADC","UART","I2C","SPI","PWM"],
-    "package":["TSSOP20","QFN20","LQFP32"],
+    "package":["LQFP144","LQFP100","LQFP64","LQFP48","QFN36"],
+    "manufacturer": {
+        "vendor":"ST",
+        "homepage":"https://my.st.com/content/my_st_com/zh/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-mainstream-mcus/stm32f1-series/stm32f103.html"
+    },
+    "url":"http://www.SoC.xin/STM32F103",
+    "repo":"https://github.com/SoCXin/STM32F103",
+    "version":"1.0.0",
+    "UID": {
+        "bits": 96,
+        "base": "0x1FFFF7E8",
+        "addr": 536868840
+    },
     "Core": {
         "num": 1,
-        "architecture":"STM8",
-        "Freq":16
+        "architecture":"Cortex-M3",
+        "Freq":[64,72]
     },
-    "STM32F103A1N": {
-        "SRAM":2000,
-        "Flash":16000,
+    "STM32F103": {
+        "SRAM":20000,
+        "Flash":64000,
         "package":"QFN20",
         "peripheral": ["ADC","TIM","PWM"],
         "GPIO":18,
-        "price":1.8
-    },
-    "STM32F103A1T": {
-        "SRAM":2000,
-        "Flash":16000,
-        "package":"TSSOP20",
-        "peripheral": ["ADC","TIM","PWM"],
-        "GPIO":18,
-        "price":1.8
+        "price":6.8
     },
     "UART": {
         "mark": ["UART1","UART2"],
@@ -56,7 +60,7 @@
         "accuracy": 0.02
     },
     "PWR": {
-        "VDD": [2000,5500],
+        "VDD": [2000,3600],
         "PVD": [1820,1810],
         "IDD": [2.21,14.31],
         "Imax": 120
@@ -70,12 +74,5 @@
         "IAP": true,
         "SWD": true,
         "speed": 115200
-    },
-    "manufacturer": {
-        "vendor":"ST",
-        "homepage": "https://www.ST.com"
-    },
-    "url":"http://www.SoC.xin/STM32F103",
-    "repo":"https://github.com/SoCXin/STM32F103",
-    "version":"1.0.0"
+    }
 }
