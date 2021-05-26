@@ -1,0 +1,18 @@
+#working subdirs
+obj/*
+bin/*
+build/*
+
+#EmBitz project files
+*.depend
+*.ebp
+*.elay
+
+#OpenOCD configuration
+openocd.cfg
+
+#sublime project files
+*.sublime-project
+*.sublime-workspace
+
+.vscode

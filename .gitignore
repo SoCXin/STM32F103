@@ -46,13 +46,21 @@ LICENSE*
 # *.png
 *.jpg
 *.rst
+.travis.yml
 doc
 tests
 # mk
-# *.md
+*.md
+Doxyfile
 **/*/README*
 *.so
 *.dcm
 *32f100*
 *32f101*
 *32f102*
+*32f105*
+*32g*
+*32f4*
+*32f3*
+*32f0*
+*32l*

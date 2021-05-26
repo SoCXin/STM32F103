@@ -15,6 +15,12 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
+      - name: Install gcc
+        run: |
+          wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+          tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+          echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
+
       - name: build boot
         working-directory: src/boot
         run: |
@@ -23,8 +29,40 @@ jobs:
           chmod +x libopencm3/scripts/lpcvtcksum
           chmod +x libopencm3/scripts/gendoxylist
           chmod +x libopencm3/scripts/genlinktest.sh
-          ./util/install-toolchain.sh
+          # ./util/install-toolchain.sh
           make -f release.Makefile -k all
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: boot
+          path: src/boot/
+
+  sboot:
+    name: Linux
+    env:
+      CMSIS: CMSIS_5
+    runs-on: ubuntu-latest
+    steps:
+      - name: ARM GCC setup
+        uses: fiam/arm-none-eabi-gcc@v1
+        with:
+          release: 8-2019-q3
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 1
+
+      - name: Resolve prerequisites
+        run: make prerequisites
+      - name: Build firmware
+        run: make stm32f103x8
+      - name: Build encrypter
+        run: make crypter
+      - name: Build testsuite
+        run: make testsuite
+      - name: Vector test
+        run: build/cipher_test
 
   build:
     runs-on: ubuntu-latest
@@ -40,7 +78,6 @@ jobs:
           tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
           echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
 
-
       - name: Build src
         working-directory: src/template
         run: |
@@ -51,4 +88,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: template
-          path: src/template/
+          path: src/template/blink/bin
