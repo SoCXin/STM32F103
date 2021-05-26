@@ -60,7 +60,7 @@ OBJS += usb_hid.o
 OBJS += usb_dwc_common.o usb_f107.o
 OBJS += st_usbfs_core.o st_usbfs_v1.o
 
-VPATH += ../../usb:../:../../cm3:../common:../../ethernet
+VPATH += ../../usb:../:../../cm3:../common
 
 include ../../Makefile.include
 
