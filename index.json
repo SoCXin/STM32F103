@@ -18,7 +18,7 @@
         "url": "https://github.com/SoCXin/STM32F103.git"
     },
     "version":"1.0.0",
-    "series":["STM32F103VB","STM32F103ZB","STM32F103IB","STM32F103XB"],
+    "series":["STM32F103Z","STM32F103V","STM32F103R","STM32F103C","STM32F103T"],
     "package":["LQFP144","LQFP100","LQFP64","LQFP48","QFN36"],
     "peripheral": ["ADC","UART","I2C","SPI","PWM"],
     "keywords": [

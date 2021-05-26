@@ -18,12 +18,6 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      # - name: Install gcc
-      #   run: |
-      #     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-      #     tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-      #     echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
-
       - name: make-action
         uses: Qful/make-action@master
         with:
@@ -104,7 +98,11 @@ jobs:
           path: src/sboot/build
 
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -120,16 +118,28 @@ jobs:
       - name: make-action
         uses: Qful/make-action@master
         with:
-          release: 8-2019-q3
-
-      - name: Build src
+          release: 10-2020-q4
+      - name: build template
         working-directory: src/template
+        if: matrix.os == 'ubuntu-latest'
         run: |
           make -C blink
-          # mkdir build && cd build
-          # cmake CROSS_COMPILER_PATH=../gcc-arm-none-eabi-10-2020-q4-major ..
 
-      - uses: actions/upload-artifact@v2
+      - name: build template
+        working-directory: src/template
+        if: matrix.os == 'windows-latest'
+        run: |
+          make -C blink SHELL=cmd
+
+      - name: build template
+        working-directory: src/template
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install make
+          make -C blink
+
+      - name: upload template
+        uses: actions/upload-artifact@v2
         with:
-          name: template
+          name: template_${{ matrix.os }}
           path: src/template/blink/bin
