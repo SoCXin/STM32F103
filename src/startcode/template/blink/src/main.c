@@ -1,8 +1,3 @@
-/**
- * STM32F103C8 Blink Demonstration
- *
- */
-
 #include "stm32f1xx.h"
 
 int main(void)

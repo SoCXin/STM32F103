@@ -1,8 +1,3 @@
-# Makefile for the STM32F103C8 blink program
-#
-# Kevin Cuzner
-#
-
 PROJECT = blink
 
 # Project Structure
@@ -22,13 +17,13 @@ ASM = $(wildcard $(SRCDIR)/*.s) $(wildcard $(COMDIR)/*.s)
 # Include directories
 INCLUDE  = -I$(INCDIR) -Icmsis
 
-# Linker 
+# Linker
 LSCRIPT = STM32F103X8_FLASH.ld
 
 # C Flags
 GCFLAGS  = -std=c99 -Wall -fno-common -mthumb -mcpu=$(CPU) -DSTM32F103xB --specs=nosys.specs -g -Wa,-ahlms=$(addprefix $(OBJDIR)/,$(notdir $(<:.c=.lst)))
 GCFLAGS += $(INCLUDE)
-LDFLAGS += -T$(LSCRIPT) -mthumb -mcpu=$(CPU) --specs=nosys.specs 
+LDFLAGS += -T$(LSCRIPT) -mthumb -mcpu=$(CPU) --specs=nosys.specs
 ASFLAGS += -mcpu=$(CPU)
 
 # Flashing
