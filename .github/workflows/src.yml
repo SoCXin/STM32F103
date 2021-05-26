@@ -35,7 +35,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: boot
-          path: src/boot/
+          path: src/boot/build
 
   sboot:
     name: sboot

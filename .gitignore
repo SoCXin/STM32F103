@@ -7,8 +7,6 @@ Debug
 *$py.class
 *__pyc*/
 *.DS_Store
-*.swp
-*.lck
 *.autosave
 *~
 Change*
@@ -17,11 +15,11 @@ README*
 COPY*
 *CONTRIBU*
 LICENSE*
-*.dep
+*.swp
+*.lck
 *.log
 *.ewt
 *.ewd
-*.pyc
 *.crf
 *.dep
 *.map
@@ -30,18 +28,18 @@ LICENSE*
 *.bak
 *.txt
 *.lst
-*.uvgu*
 *.sct
 *.elf
 *.ini
 *_sc*
 *cm23*
+*cm33*
 # *cm3*
 *cm4*
 *cm7*
 *cm1*
 *cm0*
-*.rst
+*.uvgu*
 .gitmodules
 # *.png
 *.jpg

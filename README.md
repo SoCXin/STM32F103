@@ -2,27 +2,28 @@
 
 [![sites](http://182.61.61.133/link/resources/SoC.png)](http://SoC.Xin)
 
+[![Build Status](https://github.com/SoCXin/STM32F103/workflows/src/badge.svg)](https://github.com/SoCXin/STM32F103/actions/workflows/src.yml)
+
 * [ST](https://www.st.com/zh/): [Cortex-M3](https://github.com/SoCXin/Cortex)
-* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (2424CoreMark)
+* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (177CoreMark)
 
 ## [简介](https://github.com/SoCXin/STM32F103/wiki)
 
-[STM32F103](https://github.com/SoCXin/STM32F103)系列具有16KB ~ 1MB Flash、多种控制外设、USB全速接口和CAN。
+[STM32F103](https://github.com/SoCXin/STM32F103) 具有高达1MB的Flash、电机控制、USB和CAN
 
-[![sites](docs/STM32F103.png)](https://www.st.com/content/st_com/zh/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-high-performance-mcus/stm32h7-series/STM32F103-value-line.html)
+[![sites](docs/STM32F103.png)](https://www.st.com/zh/microcontrollers-microprocessors/stm32f103cb.html)
 
 ### 关键特性
 
-
-* 128 KB Flash + 1 MB SRAM
-* 内核功耗典型值为 147 µ/MHz @VDD = 3.3 V和25 °C
+* 9 个通信接口 (2xI2C,3xUSART,2xSPI,CAN2.0B,USB2.0)
+* Temperature sensor
 
 #### 封装规格
 
-* LQFP176 (24×24mm)
-* LQFP144 (20×20mm)
+* LQFP48 (7×7mm)
+* LQFP64 (10×10mm)
 * LQFP100 (14×14mm)
-
+* LQFP144 (20×20mm)
 
 ### [资源收录](https://github.com/SoCXin)
 

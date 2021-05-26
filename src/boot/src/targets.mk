@@ -80,33 +80,7 @@ ifeq ($(TARGET),STLINK_HIGH_128)
 	ARCH			= STM32F1
 	DEFS			+= -DBOOTLOADER_HIGH
 endif
-ifeq ($(TARGET),OLIMEXSTM32H103)
-	TARGET_COMMON_DIR	:= ./stm32f103
-	TARGET_SPEC_DIR		:= ./stm32f103/olimexstm32h103
-	LDSCRIPT			:= ./stm32f103/stm32f103x8.ld
-	ARCH				= STM32F1
-endif
-ifeq ($(TARGET),OLIMEXSTM32H103_HIGH)
-	TARGET_COMMON_DIR	:= ./stm32f103
-	TARGET_SPEC_DIR		:= ./stm32f103/olimexstm32h103
-	LDSCRIPT		:= ./stm32f103/stm32f103x8_high.ld
-	ARCH			= STM32F1
-	DEFS			+= -DBOOTLOADER_HIGH
-endif
-ifeq ($(TARGET),OLIMEXSTM32H103_HIGH_128)
-	TARGET_COMMON_DIR	:= ./stm32f103
-	TARGET_SPEC_DIR		:= ./stm32f103/olimexstm32h103
-	LDSCRIPT		:= ./stm32f103/stm32f103xb_high.ld
-	ARCH			= STM32F1
-	DEFS			+= -DBOOTLOADER_HIGH
-endif
-ifeq ($(TARGET),STM32L1_GENERIC)
-	TARGET_COMMON_DIR	:= ./stm32l1
-	TARGET_SPEC_DIR		:= ./stm32l1/generic
-	LDSCRIPT		:= ./stm32l1/stm32l1-standard.ld
-	ARCH			= STM32L1
-	DEFS			+= -DNDEBUG
-endif
+
 
 ifndef ARCH
 $(error Unknown target $(TARGET))
