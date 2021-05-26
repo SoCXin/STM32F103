@@ -38,7 +38,7 @@ jobs:
           path: src/boot/
 
   sboot:
-    name: Linux
+    name: sboot
     env:
       CMSIS: CMSIS_5
     runs-on: ubuntu-latest
@@ -54,15 +54,13 @@ jobs:
           fetch-depth: 1
 
       - name: Resolve prerequisites
-        run: make prerequisites
-      - name: Build firmware
-        run: make stm32f103x8
-      - name: Build encrypter
-        run: make crypter
-      - name: Build testsuite
-        run: make testsuite
-      - name: Vector test
-        run: build/cipher_test
+        working-directory: src/sboot
+        run: |
+          make prerequisites
+          make stm32f103x8
+          make crypter
+          make testsuite
+          build/cipher_test
 
   build:
     runs-on: ubuntu-latest
