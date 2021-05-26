@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ARM GCC setup
-        uses: fiam/arm-none-eabi-gcc@v1
+        uses: Qful/make-action@master
         with:
           release: 8-2019-q3
 
@@ -53,7 +53,7 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      - name: Resolve prerequisites
+      - name: build test
         working-directory: src/sboot
         run: |
           make prerequisites
@@ -61,6 +61,11 @@ jobs:
           make crypter
           make testsuite
           build/cipher_test
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sboot
+          path: src/sboot/build
 
   build:
     runs-on: ubuntu-latest
