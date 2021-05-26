@@ -6,6 +6,9 @@ on:
       - 'src/**'
       - '**.yml'
 
+env:
+  CMSIS: CMSIS_5
+
 jobs:
   boot:
     runs-on: ubuntu-latest
@@ -15,11 +18,16 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      - name: Install gcc
-        run: |
-          wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-          tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-          echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
+      # - name: Install gcc
+      #   run: |
+      #     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+      #     tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+      #     echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
+
+      - name: make-action
+        uses: Qful/make-action@master
+        with:
+          release: '10-2020-q4'
 
       - name: build boot
         working-directory: src/boot
@@ -44,21 +52,13 @@ jobs:
         # example:
         #   - "native-blink"
         #   - "spl-blink"
-        #   - "spl-flash"
-        #   - "spl-uart-loopback"
-        #   - "spl-uart-simple-printf"
-        #   - "arduino-fade-all-pins"
-        #   - "arduino-internal-lib"
-        #   - "arduino-ping-hc04"
         os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
-    env:
-      CMSIS: CMSIS_5
     steps:
       - name: make-action
         uses: Qful/make-action@master
         with:
-          release: 8-2019-q3
+          release: 10-2020-q4
 
       - uses: actions/checkout@v2
         with:
