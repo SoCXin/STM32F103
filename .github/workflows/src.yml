@@ -38,12 +38,24 @@ jobs:
           path: src/boot/build
 
   sboot:
-    name: sboot
+    strategy:
+      fail-fast: false
+      matrix:
+        # example:
+        #   - "native-blink"
+        #   - "spl-blink"
+        #   - "spl-flash"
+        #   - "spl-uart-loopback"
+        #   - "spl-uart-simple-printf"
+        #   - "arduino-fade-all-pins"
+        #   - "arduino-internal-lib"
+        #   - "arduino-ping-hc04"
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     env:
       CMSIS: CMSIS_5
-    runs-on: ubuntu-latest
     steps:
-      - name: ARM GCC setup
+      - name: make-action
         uses: Qful/make-action@master
         with:
           release: 8-2019-q3
@@ -53,18 +65,42 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      - name: build test
+      - name: build
+        if: matrix.os == 'ubuntu-latest'
         working-directory: src/sboot
         run: |
           make prerequisites
           make stm32f103x8
           make crypter
           make testsuite
+
+      - name: build
+        if: matrix.os == 'windows-latest'
+        working-directory: src/sboot
+        run: |
+          make prerequisites
+          make stm32f103x8 SHELL=cmd
+          make crypter SHELL=cmd SWTOOLS=
+          make testsuite SHELL=cmd SWTOOLS=
+
+      - name: build
+        if: matrix.os == 'macos-latest'
+        working-directory: src/sboot
+        run: |
+          brew install make
+          gmake prerequisites
+          gmake stm32f103x8
+          gmake crypter
+          gmake testsuite
+
+      - name: vector test
+        working-directory: src/sboot
+        run: |
           build/cipher_test
 
       - uses: actions/upload-artifact@v2
         with:
-          name: sboot
+          name: sboot_${{ matrix.os }}
           path: src/sboot/build
 
   build:
@@ -75,11 +111,16 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      - name: Install gcc
-        run: |
-          wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-          tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-          echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
+      # - name: Install gcc
+      #   run: |
+      #     wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+      #     tar -xf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+      #     echo `pwd`/gcc-arm-none-eabi-10-2020-q4-major/bin >> $GITHUB_PATH
+
+      - name: make-action
+        uses: Qful/make-action@master
+        with:
+          release: 8-2019-q3
 
       - name: Build src
         working-directory: src/template
