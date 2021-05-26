@@ -46,6 +46,9 @@ LICENSE*
 # *.png
 *.jpg
 *.rst
+doc
+tests
+# mk
 # *.md
 **/*/README*
 *.so
