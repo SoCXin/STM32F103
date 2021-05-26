@@ -1,41 +1,38 @@
 ﻿# [STM32F103](https://github.com/SoCXin/STM32F103)
 
-[![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.SoC.Xin)
+[![sites](http://182.61.61.133/link/resources/SoC.png)](http://SoC.Xin)
 
-#### [Vendor](https://github.com/SoCXin/Vendor)：[ST](https://www.st.com/zh/microcontrollers-microprocessors/stm32f103.html)
-#### [Core](https://github.com/SoCXin/Cortex)：[Cortex-M3](https://github.com/SoCXin/CM3)
-#### [Level](https://github.com/SoCXin/Level)：72 MHz x 1.25 DMIPS/MHz
+* [ST](https://www.st.com/zh/): [Cortex-M3](https://github.com/SoCXin/Cortex)
+* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (2424CoreMark)
 
 ## [简介](https://github.com/SoCXin/STM32F103/wiki)
 
-[STM32F103](https://github.com/SoCXin/STM32F103) 采用Cortex-M3内核，CPU最高速度达72 MHz，具有单周期乘法和硬件除法
+[STM32F103](https://github.com/SoCXin/STM32F103)系列具有16KB ~ 1MB Flash、多种控制外设、USB全速接口和CAN。
 
-该产品系列具有16KB ~ 1MB Flash、多种控制外设、USB全速接口和CAN。
+[![sites](docs/STM32F103.png)](https://www.st.com/content/st_com/zh/products/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus/stm32-high-performance-mcus/stm32h7-series/STM32F103-value-line.html)
 
-该系列最大64K SRAM，flash可分为三大类：小容量（16K和32K）、中容量（64K和128K）、大容量（256K、384K和512K）
-
-内嵌带校准的40KHz的RC振荡器
-
-2个DMA控制器，共12个DMA通道：DMA1有7个通道，DMA2有5个通道
+### 关键特性
 
 
-[![sites](docs/STM32F103.png)](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html)
+* 128 KB Flash + 1 MB SRAM
+* 内核功耗典型值为 147 µ/MHz @VDD = 3.3 V和25 °C
 
-#### 关键特性
+#### 封装规格
 
-* 产品型号丰富，兼容性强
-* 具备常用外设，配置完善
-* 用于群体广泛，参考丰富
+* LQFP176 (24×24mm)
+* LQFP144 (20×20mm)
+* LQFP100 (14×14mm)
 
-### [收录资源](https://github.com/SoCXin/STM32F103)
 
-* [资源](src/)
-* [文档](docs/)
-* [工程](project/)
+### [资源收录](https://github.com/SoCXin)
+
+* [参考资源](src/)
+* [参考文档](docs/)
+* [参考工程](project/)
 
 ### [选型建议](https://github.com/SoCXin)
 
-[STM32F103](https://github.com/SoCXin/STM32F103) 兼容系列包括：
+[STM32F103](https://github.com/SoCXin/STM32F103) 该系列的规格型号也是最全的，按封装和存储容量有29个规格配置,兼容系列包括：
 
 * STM32F100 - 24 MHz CPU，具有电机控制和CEC功能
 * STM32F101 - 36 MHz CPU，具有高达1MB的Flash
@@ -43,9 +40,5 @@
 * STM32F103 - 72 MHz，具有高达1MB的Flash、电机控制、USB和CAN
 * STM32F105/107 - 72 MHz CPU，具有以太网MAC、CAN和USB 2.0 OTG
 
-最为常用的是STM32F103系列，该系列的规格型号也是最全的，按封装和存储容量有29个规格配置
 
-* 该芯优势：长期积累了大量开发实例，配套完善，方便快捷
-* 该产品竞争力不足之处在于：被大量模仿改良，相较新品无亮点，性价比落伍。
-
-###  [www.SoC.xin(芯)](http://www.SoC.Xin)
+###  [探索芯世界 www.SoC.xin](http://www.SoC.Xin)
