@@ -26,8 +26,6 @@ GCFLAGS += $(INCLUDE)
 LDFLAGS += -T$(LSCRIPT) -mthumb -mcpu=$(CPU) --specs=nosys.specs
 ASFLAGS += -mcpu=$(CPU)
 
-# Flashing
-OCDFLAGS = -f openocd.cfg
 
 # Tools
 CC = arm-none-eabi-gcc
@@ -37,7 +35,10 @@ LD = arm-none-eabi-ld
 OBJCOPY = arm-none-eabi-objcopy
 SIZE = arm-none-eabi-size
 OBJDUMP = arm-none-eabi-objdump
+
+# Flashing
 OCD = openocd
+OCDFLAGS = -f openocd.cfg
 
 RM = rm -rf
 
