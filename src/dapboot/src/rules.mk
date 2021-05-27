@@ -1,25 +1,3 @@
-##
-## This file is derived from the libopencm3 project.
-##
-## Copyright (C) 2009 Uwe Hermann <uwe@hermann-uwe.de>
-## Copyright (C) 2010 Piotr Esden-Tempski <piotr@esden.net>
-## Copyright (C) 2013 Frantisek Burian <BuFran@seznam.cz>
-## Copyright (C) 2016 Devan Lai
-##
-## This library is free software: you can redistribute it and/or modify
-## it under the terms of the GNU Lesser General Public License as published by
-## the Free Software Foundation, either version 3 of the License, or
-## (at your option) any later version.
-##
-## This library is distributed in the hope that it will be useful,
-## but WITHOUT ANY WARRANTY; without even the implied warranty of
-## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-## GNU Lesser General Public License for more details.
-##
-## You should have received a copy of the GNU Lesser General Public License
-## along with this library.  If not, see <http://www.gnu.org/licenses/>.
-##
-
 # Be silent per default, but 'make V=1' will show all compiler calls.
 ifneq ($(V),1)
 Q              := @
