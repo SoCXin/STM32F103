@@ -80,14 +80,14 @@ static const struct usb_bos_descriptor bos = {
 static char serial_number[USB_SERIAL_NUM_LENGTH+1];
 
 static const char *usb_strings[] = {
-    "STM32 DFU",
+    "QitasTang",
 #ifdef BOOTLOADER_HIGH
     "DAP DFU Bootloader(64K)",
 #else
     " DAP DFU Bootloader(8K)",
 #endif
     serial_number,
-    "STM32 DAP DFU"
+    "DAP DFU"
 };
 
 /* Buffer to be used for control requests. */
@@ -106,8 +106,8 @@ usbd_device* usb_setup(void) {
 
     const usbd_driver* driver = target_usb_init();
     usbd_device* usbd_dev = usbd_init(driver, &dev, &config, &bos,
-                                      usb_strings, num_strings,
-                                      usbd_control_buffer, sizeof(usbd_control_buffer));
+                                    usb_strings, num_strings,
+                                    usbd_control_buffer, sizeof(usbd_control_buffer));
 
     return usbd_dev;
 }
