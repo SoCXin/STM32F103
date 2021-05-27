@@ -5,7 +5,7 @@
 #include "config.h"
 
 #ifndef LANDING_PAGE_URL
-#define LANDING_PAGE_URL "https://www.soc.xin/dfu/"
+#define LANDING_PAGE_URL "www.soc.xin/dfu/"
 #endif
 
 #define LANDING_PAGE_DESCRIPTOR_SIZE (WEBUSB_DT_URL_DESCRIPTOR_SIZE \

@@ -97,11 +97,11 @@ static const struct usb_bos_descriptor bos = {
 static char serial_number[USB_SERIAL_NUM_LENGTH+1];
 
 static const char *usb_strings[] = {
-    "Qitas",
+    "STM32 DFU",
 #ifdef BOOTLOADER_HIGH
-    "High-Memory DFU Bootloader",
+    "STM32 DAP DFU Bootloader",
 #else
-    "DAP DFU",
+    "DAP DFU Bootloader",
 #endif
     serial_number,
     "DAPBoot DFU"

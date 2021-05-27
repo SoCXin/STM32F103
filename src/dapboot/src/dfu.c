@@ -90,7 +90,7 @@ static inline void dfu_set_status(enum dfu_status status) {
 static void dfu_on_download_complete(usbd_device* usbd_dev, struct usb_setup_data* req) {
     (void)usbd_dev;
     (void)req;
-    
+
     dfu_set_state(STATE_DFU_MANIFEST_SYNC);
 }
 
@@ -107,7 +107,8 @@ static void dfu_on_download_request(usbd_device* usbd_dev, struct usb_setup_data
     (void)req;
 
 
-    if (DFU_PATCH_VECTORS && current_dfu_offset == 0) {
+    if (DFU_PATCH_VECTORS && current_dfu_offset == 0)
+    {
         if (dfu_download_size < offsetof(vector_table_t, reserved_x001c[1])) {
             /* Can't handle splitting the vector table right now */
             dfu_set_status(DFU_STATUS_ERR_VENDOR);
