@@ -26,7 +26,6 @@ jobs:
       - name: build dapboot
         working-directory: src/dapboot
         run: |
-          chmod +x util/install-toolchain.sh
           chmod +x libopencm3/scripts/irq2nvic_h
           chmod +x libopencm3/scripts/lpcvtcksum
           chmod +x libopencm3/scripts/gendoxylist
