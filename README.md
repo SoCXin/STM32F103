@@ -16,13 +16,10 @@
 ### 关键特性
 
 * 最多 9 个通信接口 (2xI2C,3xUSART,2xSPI,CAN2.0B,USB2.0)
+* 29个规格配置
+* 大量开源工程兼容 (Bluepill)
 
-#### 封装规格
 
-* LQFP48 (7×7mm)
-* LQFP64 (10×10mm)
-* LQFP100 (14×14mm)
-* LQFP144 (20×20mm)
 
 ### [资源收录](https://github.com/SoCXin)
 
@@ -32,9 +29,16 @@
 
 ### [选型建议](https://github.com/SoCXin)
 
-[STM32F103](https://github.com/SoCXin/STM32F103) 该系列的规格型号也是最全的，按封装和存储容量有29个规格配置,兼容系列包括：
+[STM32F103](https://github.com/SoCXin/STM32F103) 借助于开源方案非常适合原型验证和小样开发，配置全面能满足各种常用场景，各种替换方案也十分普及，是MCU的一个时代标杆产品
 
 * STM32F103，具有高达1MB的Flash、电机控制、USB和CAN
 * STM32F105/107，具有以太网MAC、CAN和USB 2.0 OTG
+
+#### 封装规格
+
+* LQFP48 (7×7mm)
+* LQFP64 (10×10mm)
+* LQFP100 (14×14mm)
+* LQFP144 (20×20mm)
 
 ### [探索芯世界 www.SoC.xin](http://www.SoC.Xin)
