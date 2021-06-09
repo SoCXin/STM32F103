@@ -117,6 +117,7 @@ jobs:
         uses: Qful/make-action@master
         with:
           release: 10-2020-q4
+
       - name: build template
         working-directory: src/template
         if: matrix.os == 'ubuntu-latest'
@@ -156,7 +157,7 @@ jobs:
           - "stm32cube-hal-blink"
           - "stm32cube-hal-eeprom-emulation"
           - "zephyr-blink"
-        os: [ubuntu-16.04, windows-latest, macos-latest]
+        os: [ubuntu-18.04, windows-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -195,19 +196,34 @@ jobs:
           submodules: "recursive"
           fetch-depth: 1
 
-      - name: install  
-        run: |
-          sudo apt update -y
-          sudo apt install -y rust gcc-arm-none-eabi libnewlib-arm-none-eabi clang
-
-
-      - name: build 
+      - name: actions-rs
+        uses: actions-rs/toolchain@v1
         working-directory: src/template/rust-usbd
-        run: |
-          rustup target add thumbv6m-none-eabi
-          rustup target add thumbv7m-none-eabi
-          rustup target add thumbv7em-none-eabihf
-          cargo build --release
+        with:
+          profile: minimal
+          toolchain: stable
+          target: thumbv7m-none-eabi
+          override: true
+
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        working-directory: src/template/rust-usbd
+        with:
+          command: check
+
+      # - name: install  
+      #   run: |
+      #     sudo apt update -y
+      #     sudo apt install -y rust gcc-arm-none-eabi libnewlib-arm-none-eabi clang
+
+
+      # - name: build 
+      #   working-directory: src/template/rust-usbd
+      #   run: |
+      #     rustup target add thumbv6m-none-eabi
+      #     rustup target add thumbv7m-none-eabi
+      #     rustup target add thumbv7em-none-eabihf
+      #     cargo build --release
 
       - uses: actions/upload-artifact@v2
         with:
