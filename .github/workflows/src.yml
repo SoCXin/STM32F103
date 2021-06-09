@@ -202,12 +202,10 @@ jobs:
         with:
           profile: minimal
           toolchain: stable
-          target: thumbv7m-none-eabi
           override: true
 
       - name: Run cargo check
         uses: actions-rs/cargo@v1
-        working-directory: src/template/rust-usbd
         with:
           command: check
 
