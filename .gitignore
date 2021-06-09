@@ -15,6 +15,9 @@ README*
 COPY*
 *CONTRIBU*
 LICENSE*
+target
+.cargo
+*.lock
 *.swp
 *.lck
 *.log
@@ -26,7 +29,7 @@ LICENSE*
 *.hex
 *.bin
 *.bak
-*.txt
+# *.txt
 *.lst
 *.sct
 *.elf

@@ -187,3 +187,29 @@ jobs:
           name: platformio_${{ matrix.example }}_${{ matrix.os }}
           path: src/platformio/${{ matrix.example }}/
 
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 1
+
+      - name: install  
+        run: |
+          sudo apt update -y
+          sudo apt install -y rust gcc-arm-none-eabi libnewlib-arm-none-eabi clang
+
+
+      - name: build 
+        working-directory: src/template/rust-usbd
+        run: |
+          rustup target add thumbv6m-none-eabi
+          rustup target add thumbv7m-none-eabi
+          rustup target add thumbv7em-none-eabihf
+          cargo build --release
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: rust-usbd
+          path: src/template/rust-usbd/target
