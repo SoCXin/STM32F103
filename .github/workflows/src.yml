@@ -198,30 +198,28 @@ jobs:
 
       - name: actions-rs
         uses: actions-rs/toolchain@v1
-        working-directory: src/template/rust-usbd
         with:
           profile: minimal
           toolchain: stable
+          target: thumbv7m-none-eabi
           override: true
 
-      - name: Run cargo check
+      - name: build 
+        working-directory: src/template/rust-usbd
+        run: |
+          cargo build --release
+
+      - name: Run cargo
         uses: actions-rs/cargo@v1
         with:
-          command: check
+          command: build
+          args: --release --features=stm32f103
 
       # - name: install  
       #   run: |
       #     sudo apt update -y
       #     sudo apt install -y rust gcc-arm-none-eabi libnewlib-arm-none-eabi clang
 
-
-      # - name: build 
-      #   working-directory: src/template/rust-usbd
-      #   run: |
-      #     rustup target add thumbv6m-none-eabi
-      #     rustup target add thumbv7m-none-eabi
-      #     rustup target add thumbv7em-none-eabihf
-      #     cargo build --release
 
       - uses: actions/upload-artifact@v2
         with:
