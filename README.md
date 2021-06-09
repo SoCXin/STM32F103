@@ -4,8 +4,8 @@
 
 [![Build Status](https://github.com/SoCXin/STM32F103/workflows/src/badge.svg)](https://github.com/SoCXin/STM32F103/actions/workflows/src.yml)
 
-* [ST](https://www.st.com/zh/): [Cortex-M3](https://github.com/SoCXin/Cortex)
-* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz (177CoreMark)
+* [ST](https://www.st.com/zh/): [Armv7-M:Cortex-M3](https://github.com/SoCXin/Cortex)
+* [L3R4](https://github.com/SoCXin/Level): 72 MHz x 1.25 DMIPS/MHz, [1.50 CoreMark/MHz](https://www.eembc.org/coremark/scores.php)
 
 ## [简介](https://github.com/SoCXin/STM32F103/wiki)
 
@@ -17,7 +17,7 @@
 
 * 最多 9 个通信接口 (2xI2C,3xUSART,2xSPI,CAN2.0B,USB2.0)
 * 29个规格配置
-* 大量开源工程兼容 (Bluepill)
+* 大量开源工程 (Bluepill)
 
 
 
@@ -34,11 +34,12 @@
 * STM32F103，具有高达1MB的Flash、电机控制、USB和CAN
 * STM32F105/107，具有以太网MAC、CAN和USB 2.0 OTG
 
+[![sites](docs/diff.png)](https://www.st.com/en/microcontrollers-microprocessors/stm32f1-series.html)
+
 #### 封装规格
 
 * LQFP48 (7×7mm)
 * LQFP64 (10×10mm)
 * LQFP100 (14×14mm)
-* LQFP144 (20×20mm)
 
 ### [探索芯世界 www.SoC.xin](http://www.SoC.Xin)
